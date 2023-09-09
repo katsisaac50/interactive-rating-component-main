@@ -1,7 +1,6 @@
 'use client'
 import Image from 'next/image';
 import { useState } from 'react';
-import Checkout from './checkout/checkout';
 import { useRouter } from 'next/navigation'
 
 
@@ -17,7 +16,7 @@ export default function Home() {
   function onSubmit(event) {
    event.preventDefault()
    localStorage.setItem({value:inputValue},"hello" );
-   router.push('/checkout');
+   router.push('/app/checkout');
    console.log(event.target);
  };
   
