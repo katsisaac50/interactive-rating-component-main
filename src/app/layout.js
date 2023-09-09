@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google';
-import Checkout from './ceckout';
+import Checkout from './checkout/checkout';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}> {<Checkout />} </body>
+      <body className={inter.className}> {children} </body>
     </html>
   )
 }

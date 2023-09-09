@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
-export default function Checkout() {
+export default function Checkout(props) {
+  console.log(props.value);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="p-9 rounded-3xl bg-gray-800 max-w-[390px] mx-auto">
@@ -15,7 +16,7 @@ export default function Checkout() {
     /> */}
     <br/>
     <label className='bg-slate-300 rounded-full px-5 py-2 ml-12 text-orange-500'>
-    You selected 4 our of 5
+    You selected ${props.value} our of 5
     </label>
     <br/>
     <h2 className="text-white font-bold text-center mt-5 mb-5">Thank you ! </h2>

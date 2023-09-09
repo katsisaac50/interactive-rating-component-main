@@ -1,6 +1,27 @@
-import Image from 'next/image'
+'use client'
+import Image from 'next/image';
+import { useState } from 'react';
+import Checkout from './checkout/checkout';
+import { useRouter } from 'next/navigation'
+
 
 export default function Home() {
+   const router = useRouter();
+   const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (e) =>{
+    setInputValue(e.target.value);
+   console.log(e.target.value);
+  };
+
+  function onSubmit(event) {
+   event.preventDefault()
+   localStorage.setItem({value:inputValue},"hello" );
+   router.push('/checkout');
+   console.log(event.target);
+ };
+  
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="p-9 rounded-3xl bg-gray-800 max-w-[390px] mx-auto">
@@ -13,8 +34,10 @@ export default function Home() {
       <p className="text-lg leading-8 text-gray-300 text-sm md:text-base">Please let us know how we did with your support request. All feedback is appreciated 
       to help us improve our offering!
       </p>
+      <form onSubmit={onSubmit}>
       <div className="py-8 flex items-center justify-center space-x-7">
-      <input id="rate1" class="peer/draft hidden" type="radio" name="status" checked />
+      
+      <input value={1} onClick={handleInputChange}id="rate1" class="peer/draft hidden" type="radio" name="status" checked />
       <label for="rate1" className="cursor-pointer relative w-7 text-gray-300 h-7 bg-gray-700 rounded-full flex justify-center items-center text-center p-5 shadow-xl hover:bg-orange-600">
       
       1
@@ -36,8 +59,12 @@ export default function Home() {
       5
    </label>
    </div>
-      <button className="pt-1 pb-1 w-80 max-h-fit hover:bg-gray-100 max-w-screen-2xl bg-orange-400 text-white  rounded-full ...">Submit</button>
+   
+      <button className="pt-1 pb-1 w-80 max-h-fit hover:bg-gray-100 hover:text-orange-400 max-w-screen-2xl bg-orange-400 text-white  rounded-full ..." type="submit">Submit</button>
+      </form>
       </div>
+   
+      {/* <Checkout value={inputValue}/> */}
     </main>
   )
 }
