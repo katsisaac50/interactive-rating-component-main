@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+input[type="radio"]:checked + label {
+  background-color: rgba(163, 161, 161, 0.82);
+}
 :root {
   
   background-color: rgba(5, 5, 5, 0.82);
@@ -13,6 +15,10 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+
+button.bg-red-400:focus ~ button.bg-blue-400 {
+  background-color: rgba(185, 28, 28, 1);
 }
 
 body {
