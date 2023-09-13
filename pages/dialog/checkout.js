@@ -9,8 +9,8 @@ export default function Checkout() {
   const router = useRouter();
 
   useEffect(() => {
-    // Check if rating is 0, and if so, navigate back to the Home component
-    if (rating === null) {
+    // Check if rating is null or undefined, and if so, navigate back to the Home component
+    if (rating === null || rating === undefined) {
       router.push('/');
     }
   }, [rating, router]);
@@ -22,7 +22,7 @@ export default function Checkout() {
           <HeartSVG className="w-12 h-12 text-orange-300 mx-auto" />
         </div>
         <label className="bg-slate-300 rounded-full px-5 py-2 text-orange-500">
-          You selected {rating} out of 5
+          You selected {rating || 0} out of 5
         </label>
         <h2 className="text-white font-bold mt-5 mb-5">Thank you!</h2>
         <p className="text-gray-400">
