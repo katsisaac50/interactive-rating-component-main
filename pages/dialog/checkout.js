@@ -8,7 +8,6 @@ export default function Checkout() {
   const { rating } = useRating();
   const router = useRouter();
 
-  // Use useEffect to handle the navigation
   useEffect(() => {
     // Check if rating is null or undefined, and if so, navigate back to the Home component
     if (rating === null || rating === undefined) {
@@ -16,7 +15,7 @@ export default function Checkout() {
     }
   }, [rating, router]);
 
-  // Return null if rating is null to prevent any content flash
+  // If rating is null or undefined, don't render anything
   if (rating === null || rating === undefined) {
     return null;
   }
