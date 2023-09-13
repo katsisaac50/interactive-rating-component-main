@@ -1,7 +1,40 @@
-@tailwind components;
-@tailwind utilities;
+/* Default styles for larger screens */
+.p-9 {
+  /* Your existing styles for larger screens */
+}
 
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .p-9 {
+    /* Adjust styles for mobile screens */
+    padding: 16px;
+    max-width: 100%;
+  }
+}
 
-@media (prefers-color-scheme: dark) {
-  
+.text-3xl {
+  font-size: 2rem; /* Default font size for larger screens */
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .text-3xl {
+    font-size: 1.5rem; /* Adjust font size for mobile screens */
+  }
+}
+/* checkout.module.css */
+
+/* Default styles for larger screens */
+.p-9 {
+  padding: 32px;
+  max-width: 390px;
+  margin: auto;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .p-9 {
+    padding: 16px;
+    max-width: 100%;
+  }
 }
