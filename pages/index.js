@@ -1,34 +1,23 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router'; // Use next/router instead of next/navigation
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 
-import { Inter } from 'next/font/google';
 import { useRating } from './ratingContext';
 import { StarSVG } from './images/StarSVG';
-
-const inter = Inter({ subsets: ['latin'] });
-
-export const metadata = {
-  title: 'Interactive Rating',
-  description: 'Challenge from Frontend Mentor',
-};
 
 export default function Home() {
   const { rating, setRating } = useRating();
   const router = useRouter();
-  const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (e) => {
     setRating(e.target.value);
   };
 
-  function onSubmit(event) {
-    console.log('Rating:', rating);
+  const onSubmit = (event) => {
     event.preventDefault();
     router.push('/dialog/checkout', undefined, { shallow: true });
-  }
+  };
 
-  // Generate an array of rating options
   const ratingOptions = [1, 2, 3, 4, 5];
 
   return (
@@ -80,15 +69,14 @@ export default function Home() {
             <button
               disabled={!rating}
               className={`pt-1 pb-1 w-80 max-h-fit ${
-                rating && 'hover:bg-gray-100'
-              } hover:text-orange-400 max-w-screen-2xl bg-orange-400 text-white  rounded-full ...`}
+                rating ? 'hover:bg-gray-100 hover:text-orange-400' : ''
+              } max-w-screen-2xl bg-orange-400 text-white rounded-full ...`}
               type="submit"
             >
               Submit
             </button>
           </form>
         </div>
-        {/* <Checkout value={inputValue}/> */}
       </main>
     </>
   );
