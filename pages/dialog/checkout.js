@@ -29,7 +29,7 @@ export default function Checkout() {
       <HeartSVG className="w-8 md:w-12 h-8 md:h-12 text-orange-300 mx-auto" />
       </svg>
     </div>
-    <label class="bg-slate-300 rounded-full px-3 md:px-5 py-2 text-orange-500">You selected 3 out of 5</label>
+    <label class="bg-slate-300 rounded-full px-3 md:px-5 py-2 text-orange-500">You selected {rating} out of 5</label>
     <h2 class="text-white font-bold text-xl md:text-2xl mt-4 md:mt-5 mb-4 md:mb-5">Thank you!</h2>
     <p class="text-gray-400 text-sm md:text-base">We appreciate your feedback. If you need further assistance, feel free to get in touch with us.</p>
   </div>
