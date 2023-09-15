@@ -2,10 +2,10 @@
 // Your Checkout component
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useRating } from '../ratingContext';
+import { useRating } from '../../components/ratingContext';
 import Layout from '../../components/layout';
-import { HeartSVG } from '../images/StarSVG';
-import { metadata as globalMetadata } from '../metadata'; // Import the metadata object
+import { HeartSVG } from '../../images/StarSVG';
+import { metadata as globalMetadata } from '../../components/metadata'; // Import the metadata object
 
 export default function Checkout() {
   const { rating } = useRating();
@@ -33,8 +33,7 @@ export default function Checkout() {
   // Set the updated metadata in the document head
   useEffect(() => {
     document.title = updatedMetadata.title;
-    // You can also update other meta tags as needed here
-  }, [rating]);
+  }, [rating, updatedMetadata.title]);
 
   return (
     <Layout>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { metadata } from './metadata'; // Import metadata
-import { useRating } from './ratingContext';
-import { StarSVG } from './images/StarSVG';
+import { metadata } from '../components/metadata'; // Import metadata
+import { useRating } from '../components/ratingContext';
+import { StarSVG } from '../images/StarSVG';
 
 export default function Home() {
   const { rating, setRating } = useRating();

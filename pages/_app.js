@@ -1,6 +1,6 @@
-import { RatingProvider } from './ratingContext';
+import { RatingProvider } from '../components/ratingContext';
 import '../styles/globals.css'; // Adjust the path to your global CSS file
-import { metadata } from './metadata';
+import { metadata } from '../components/metadata';
 
 function MyApp({ Component, pageProps }) {
   
