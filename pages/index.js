@@ -27,7 +27,7 @@ export default function Home() {
         <title>First Post</title>
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-24">
-        <div className="p-4 md:p-9 rounded-3xl bg-gray-800 max-w-xs md:max-w-[390px] mx-auto">
+        <div className="p-4 md:p-9 rounded-3xl bg-gray-800 max-w-xs md:max-w-[390px] mx-auto mt-20 md:mt-6">
           <div className="relative w-12 h-12 md:w-9 md:h-9 bg-gray-700 rounded-full p-2 md:p-3 shadow-xl">
             <div className="absolute inset-0 flex justify-center items-center">
               <StarSVG />
