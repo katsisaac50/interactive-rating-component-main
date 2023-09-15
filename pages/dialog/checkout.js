@@ -22,7 +22,7 @@ export default function Checkout() {
 
   // Render the content conditionally
   const content = rating != null ? (
-    <div class="p-4 md:p-9 rounded-3xl bg-gray-800 max-w-[390px] mx-auto text-center" style={contentStyle}>
+    <div class="p-4 md:p-9 rounded-3xl bg-gray-800 mx-auto text-center max-w-xs md:max-w-[390px] mx-auto" style={contentStyle}>
       <div class="mb-4">
         <svg class="mx-auto" width="162" height="108" xmlns="http://www.w3.org/2000/svg">
           <HeartSVG className="w-8 md:w-12 h-8 md:h-12 text-orange-300 mx-auto" />
